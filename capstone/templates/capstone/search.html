@@ -1,0 +1,18 @@
+{% extends "capstone/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <br><h2>Relative Search Results....</h2>
+        {% for task in tasks %}
+            {% if input in task.body %}
+                <h4><a href="{% url 'task' task.id %}">{{ task.body }}</a></h4>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <h4><center><a href="{% url 'login' %}">Login</a> to create a task.</center></h4>
+    {% endif %}
+{% endblock %}

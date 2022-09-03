@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: center url("/static/capstone/background.jpg") no-repeat fixed;
+    background-size: cover;
+    font-size: 115%;
+}
+
+.navbar {
+    padding: 0 2% 0 2%;
+}
+
+.page {
+    width: 50%;
+    height: 50%;
+    margin: 10%;
+    background-color: rgba(175, 164, 172, 0.78);
+    border: 1px solid black;
+}
+
+.page div {
+    margin: 2%;
+}
+
+form[name=create-form] {
+    line-height: 2.5rem;
+    padding: 1.5%;
+    border: 1px solid black;
+}
+
+textarea {
+    line-height: 1.75rem;
+    width: 80%;
+    background-color: whitesmoke;
+}
+
+#right {
+    text-align: right;
+}
+
+.check {
+    float: right;
+}
+
+.text-strike {
+    text-decoration: line-through;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 79, 128);
+}
+
+a:hover {
+    color: purple;
+}
+
+.delete {
+    float: right;
+}
+
+.each-task {
+    position: relative;
+    margin: 0;
+}
+
+.each-task .icons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+button[title="Edit task"] {
+    background-color: transparent;
+    border: none;
+}
+
+.register-body {
+    overflow: hidden;
+}

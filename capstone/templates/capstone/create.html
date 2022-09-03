@@ -1,0 +1,20 @@
+{% extends "capstone/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <form name="create-form" onsubmit="return validateForm()" method="POST">
+            {% csrf_token %}
+            <h4>New Task</h4>
+            <textarea name="create-body"></textarea><br>
+            Select Date and Time: <input required name="create-time" type="datetime-local"><br>
+            <input id="create-task" type="submit" value="Create Task" class="btn btn-primary"/>
+        </form><br>
+    {% else %}
+        <h4><center><a href="{% url 'login' %}">Login</a> to create a task.</center></h4>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'capstone/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "capstone/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        {% if task %}
+            <form name="edit-form" onsubmit="return validateEditForm()" method="POST">
+                {% csrf_token %}
+                Task:
+                <br>
+                <textarea name="edit-body">{{ task.body }}</textarea><br>
+                Selected Goal: {{ task.task_date }}<br><br>
+                <input required name="edit-time" type="datetime-local">
+                <input id="edit-task" type="submit" value="Edit Task" class="btn btn-primary"/>
+            </form>
+            <a href="/delete/{{ task.id }}"><button class="delete btn btn-primary">Delete</button></a>
+            <br>
+        {% else %}
+            <center><h4>This is not a valid task.</h4></center>
+        {% endif %}
+    {% else %}
+        <h4><center><a href="{% url 'login' %}">Login</a> to create a task.</center></h4>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'capstone/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "capstone/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        {% if task %}
+            <h3>{{ task.body }}</h3>
+            {% if task.complete == False %}
+                <a title="Edit task" href="/edit/{{ task.id }}"><img src="/static/capstone/edit.png" alt="edit"></a>  
+                <a title="Mark as done" href="/complete/{{ task.id }}"><img src="/static/capstone/check.svg" alt="check"></a>
+            {% else %}
+                <a title="Unmark as done" href="/complete/{{ task.id }}"><img src="/static/capstone/check.svg" alt="check"></a>
+            {% endif %}
+
+            <a href="/delete/{{ task.id }}"><button class="delete btn btn-primary">Delete</button></a><br>
+            <br>
+            Goal: {{ task.task_date }}<br>
+            {% if task.complete == True %}
+                Completion: {{ task.completion_date }}<br>
+                ✔️ Completed
+            {% else %}
+                ❌ Pending
+            {% endif %}
+            <br>
+        {% else %}
+            <center><h4>This is not a valid task.</h4></center>
+        {% endif %}
+    {% else %}
+        <h4><center><a href="{% url 'login' %}">Login</a> to create a task.</center></h4>
+    {% endif %}
+{% endblock %}
