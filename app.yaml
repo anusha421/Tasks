@@ -7,7 +7,7 @@ runtime_config:
 env: flex
 
 network:
-  name: tasks
+  name: default
   forwarded_ports:
     - 2222/tcp
 
