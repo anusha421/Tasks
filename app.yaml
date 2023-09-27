@@ -8,8 +8,6 @@ env: flex
 
 network:
   name: tasks
-
-network:
   forwarded_ports:
     - 2222/tcp
 
