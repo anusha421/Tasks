@@ -11,8 +11,6 @@ network:
   forwarded_ports:
     - 2222/tcp
 
-entrypoint: gunicorn -b :$PORT -b :2222 main:app
-
 resources:
   cpu: 1
   memory_gb: 2.3
