@@ -20,4 +20,4 @@ resources:
     volume_type: tmpfs
     size_gb: 0.5
 
-web: command to launch
+entrypoint: gunicorn -b :$PORT main:app
