@@ -19,3 +19,5 @@ resources:
   - name: ramdisk1
     volume_type: tmpfs
     size_gb: 0.5
+
+entrypoint: gunicorn -b 0.0.0.0:80 main:app
