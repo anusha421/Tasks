@@ -20,4 +20,4 @@ resources:
     volume_type: tmpfs
     size_gb: 0.5
 
-entrypoint: gunicorn -b :$PORT main:app
+entrypoint: gunicorn -b 0.0.0.0:80 main:app
