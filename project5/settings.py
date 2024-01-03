@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-fq1_e=%*&+f@u-5mz8p-v)0e&tcsy6oydlrf*-*!zk^vb_s#j2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tasks-rtfdpouxeq-el.a.run.app', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://*.tasks-rtfdpouxeq-el.a.run.app','https://*.127.0.0.1']
+ALLOWED_HOSTS = ['tasks-2hf2.onrender.com', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://*.tasks-2hf2.onrender.com','https://*.127.0.0.1']
 
 
 # Application definition
